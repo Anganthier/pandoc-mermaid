@@ -15,10 +15,10 @@ docker build . -t pandoc-mermaid:latest
 Example run to convert a markdown and supporting files into a PDF via docker run:
 
 ```sh
-$ docker run -ti --rm -u id -u $USER --cap-add=SYS_ADMIN -v $PWD:/u \
+$ docker run -ti --rm -u `id -u $USER` --cap-add=SYS_ADMIN -v $PWD:/u \
   pandoc-mermaid \
   pandoc --pdf-engine=xelatex \
-  --filter=pandoc_filter.py \
+  -F mermaid-filter \
   EXAMPLE.md -o example.pdf
 Created directory mermaid-images
 Created image mermaid-images/b6c0cfb045b80697bae20eef546e4268ab092b60.png

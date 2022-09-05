@@ -20,7 +20,7 @@ subgraph Central_Management_Sites
 
 Create a pdf version of it using the docker container pandoc-mermaid:
 
-```
+```sh
 $ ls -l
 
 $ docker run -ti --rm -u `id -u $USER` --cap-add=SYS_ADMIN -v $PWD:/u \
@@ -33,4 +33,3 @@ $ ls -l example.pdf
 ```
 
 The folder mermaid-images contains the extracted mermaid markdown and generated images and can be deleted after the run.
-
